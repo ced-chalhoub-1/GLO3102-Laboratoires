@@ -1,0 +1,50 @@
+body{
+    background-color:whitesmoke;
+}
+.topnav{
+    background-color: wheat;
+    overflow: hidden;
+    display: flex;
+
+}
+.topnav a, .topnav div{
+    color: black;
+    padding: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#mobile{
+    display:none;
+}
+figure img{
+    width: 100%;
+}
+
+figure figcaption{
+    font-size:150%
+}
+@media screen and (max-width: 640px){
+    #desktop{
+        display:none;
+    }
+    #mobile{
+        display:flex;
+    }
+    figure figcaption{
+        font-size: 120%
+    }
+    #menu_checkbox:checked~ul, #menu_checkbox:checked~#mobile{
+        display:none;
+    }
+    li{
+        list-style: none;
+    }
+    #menu_checkbox{
+        visibility:hidden;
+    }
+    i{
+        padding:2em;
+    }
+
+
+}
