@@ -1,27 +1,37 @@
 body{
-    background-color:whitesmoke;
+    background-color:#f2e3d6;
 }
 .topnav{
-    background-color: wheat;
+    background-color: #994900;
     overflow: hidden;
     display: flex;
+    justify-content: space-around;
+}
+
+.topnav a, .topnav div{
+    color: #f2e3d6;
+    padding: 1.5em;
+    font-size: large;
+    font-family: "Lucida Console", sans-serif;
+}
+i{
+    color: white;
 
 }
-.topnav a, .topnav div{
-    color: black;
-    padding: 2em;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
 #mobile{
     display:none;
 }
+
 figure img{
     width: 100%;
 }
 
 figure figcaption{
-    font-size:150%
+    font-size:150%;
+    color: #994900;
+    font-family: "Lucida Console", sans-serif;
+
 }
 @media screen and (max-width: 640px){
     #desktop{
@@ -29,16 +39,16 @@ figure figcaption{
     }
     #mobile{
         display:flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
     }
     figure figcaption{
         font-size: 120%
     }
-    #menu_checkbox:checked~ul, #menu_checkbox:checked~#mobile{
+    #menu_checkbox:checked~a, #menu_checkbox:checked~#mobile{
         display:none;
     }
-    li{
-        list-style: none;
-    }
+
     #menu_checkbox{
         visibility:hidden;
     }
