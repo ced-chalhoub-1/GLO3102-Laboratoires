@@ -13,18 +13,30 @@ body{
     padding: 1.5em;
     font-size: large;
     font-family: "Lucida Console", sans-serif;
+    text-decoration: none;
 }
 i{
     color: white;
 
 }
-
+figure input{
+    border-radius: 1em;
+    background-color: #f2e3d6;
+    color: black;
+    width: 15%;
+    min-width: 95px;
+    margin-top: 0.5em;
+}
+.active{
+    text-decoration: underline;
+}
 #mobile{
     display:none;
 }
 
 figure img{
     width: 100%;
+    margin-bottom: 0.5em;
 }
 
 figure figcaption{
@@ -33,7 +45,7 @@ figure figcaption{
     font-family: "Lucida Console", sans-serif;
 
 }
-@media screen and (max-width: 640px){
+@media screen and (max-width: 570px){
     #desktop{
         display:none;
     }
@@ -55,6 +67,5 @@ figure figcaption{
     i{
         padding:2em;
     }
-
 
 }
