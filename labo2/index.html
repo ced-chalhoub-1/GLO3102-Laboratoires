@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script type="text/javascript" src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Dropdown Search</title>
+</head>
+<body>
+
+<main>
+    <div class="container">
+        <div class="item">
+            <input type="text" id="search" placeholder="Click for options..." onkeyup="filter()" onclick="toggleList()"/>
+            <button id="reset_search" onclick="resetSearch()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul id="search_items">
+            <li><span class="list-item">Chrome</span></li>
+            <li><span class="list-item">Safari</span></li>
+            <li><span class="list-item">Vivaldi</span></li>
+            <li><span class="list-item">Opera</span></li>
+            <li><span class="list-item">Edge</span></li>
+            <li><span class="list-item">Firefox</span></li>
+        </ul>
+    </div>
+</main>
+</body>
+</html>

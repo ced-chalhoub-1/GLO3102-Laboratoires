@@ -1,0 +1,28 @@
+div ul{
+    list-style: none;
+}
+ul{
+    border-style: solid;
+    border-width: thin;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    display: none;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+span:hover{
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+span {
+    text-decoration: none;
+    color: black;
+}
+.item{
+    flex-direction:row;
+}
