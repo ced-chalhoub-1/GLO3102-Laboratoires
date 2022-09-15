@@ -7,17 +7,23 @@ filter = function(){
     if(ul.style.display === "none"){
         ul.style.display = "block";
     }
-
-
-
+    var is_results = false;
     for(var i = 0; i < li_list.length; i++){
         var span = li_list[i].querySelectorAll(".list-item")[0];
         if(span.innerText.toLowerCase().indexOf(search_content) <= -1){
             li_list[i].style.display = 'none';
         }
         else {
+            is_results = true;
             li_list[i].style.display = 'block';
+
         }
+    }
+    if(!(is_results)){
+        document.querySelector("#no-results").style.display = "block";
+    }
+    else{
+        document.querySelector("#no-results").style.display = "none";
     }
 }
 resetSearch = function(){
@@ -40,6 +46,7 @@ toggleList = function(){
     else{
         ul.style.display = 'block';
     }
+    document.querySelector("#no-results").style.display = "none";
 }
 changeTextboxValue = function(element) {
     var search_box = document.querySelector("#search");
@@ -53,3 +60,8 @@ for(var i = 0; i < span_list.length; i++){
         changeTextboxValue(this)
     })
 }
+
+document.addEventListener("focusout", function(){
+    var ul = document.querySelector("ul");
+    ul.style.display = "none";
+})
