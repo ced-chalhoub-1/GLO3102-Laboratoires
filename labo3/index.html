@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Toasts</title>
+</head>
+<body>
+
+    <main id="main">
+        <script type="module">
+            import {createButtonEventListeners} from "./script.js";
+            createButtonEventListeners();
+        </script>
+        <div id="container">
+            <label for="title">Enter a title</label>
+            <input id="title" type="text"/>
+            <input type="button" id="success" class="" value="Success">
+            <input type="button" id="error" class="" value="Error">
+            <input type="button" id="info" class="" value="Info">
+        </div>
+        <div id="toast-holder">
+
+        </div>
+    </main>
+</body>
+</html>

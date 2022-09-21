@@ -1,0 +1,30 @@
+.toast{
+    border: solid;
+    padding: 1em;
+    width: auto;
+    height: auto;
+    margin-top: 2em;
+}
+
+
+#toast-holder{
+    display:flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.check {
+    background-color: lawngreen;
+}
+
+.info{
+    background-color: deepskyblue;
+}
+
+.exclamation{
+    background-color: orangered;
+}
+#container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
