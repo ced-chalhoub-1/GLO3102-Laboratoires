@@ -15,42 +15,49 @@ document.querySelector("#createTask").addEventListener('click', async () => {
     await updateDiv();
 })
 const updateDiv = async () => {
-    const div = document.querySelector("#tasks");
+    const mainDiv = document.querySelector("#tasks");
     const responseBody = await getTasks(API_URL, userId)
-    div.innerHTML = "";
+    mainDiv.innerHTML = "";
     responseBody['tasks'].forEach(task => {
-        const text = document.createElement("li");
-        text.innerText = `${task.id} - ${task.name}`;
-        text.className = "list-group-item";
-        div.appendChild(text);
+        const div = document.createElement("div");
+        div.className = "input-group";
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = task.name;
+        input.setAttribute("data-taskId", task.id)
+        input.className = "form-control task";
+        div.appendChild(input);
+
+        const modifyButton = document.createElement("input");
+        modifyButton.type = "button";
+        modifyButton.value = "Modify";
+        modifyButton.className = "btn btn-warning modifyTask";
+        modifyButton.addEventListener('click', () => {
+            const newName = input.value;
+            modifyTask(task.id, newName);
+        })
+
+        div.appendChild(modifyButton);
+
+        const deleteButton = document.createElement("input");
+        deleteButton.type = "button";
+        deleteButton.value = "Delete";
+        deleteButton.className = "btn btn-danger deleteTask";
+        deleteButton.addEventListener('click', () => {
+            deleteTask(API_URL, userId, task.id);
+            div.remove();
+        })
+
+        div.appendChild(deleteButton);
+
+        mainDiv.appendChild(div);
+
     })
+
 }
-document.querySelector("#getTasks").addEventListener('click', async() => {
-    await updateDiv();
-})
 
-document.querySelector("#modifyTask").addEventListener('click', async() => {
-    const taskid = document.querySelector("#taskId").value;
-    const taskname = document.querySelector("#changeTaskName").value;
-    if(taskname !== "" && taskname !== null && taskid !== "" && taskid !== null){
-        const data = {name: `${taskname}`};
-        try{
-           await editTask(API_URL, userId, taskid, data);
-        } catch(err){
-            console.log(err)
-        }
-
-    }
-    await updateDiv();
-})
-
-document.querySelector("#deleteTask").addEventListener('click', async() => {
-    const taskId = document.querySelector("#taskId").value;
-    try{
-        await deleteTask(API_URL, userId, taskId)
-    } catch(err){
-        console.log(err)
-    }
-
-    await updateDiv();
-})
+const modifyTask = async (taskId, taskName) => {
+    const requestBody = {name: `${taskName}`}
+    await editTask(API_URL, userId, taskId, requestBody);
+}
