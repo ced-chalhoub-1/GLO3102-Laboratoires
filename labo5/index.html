@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./App.js"></script>
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="main_container">
+        <input v-model="inputValue" placeholder="New Task Name">
+        <button :disabled="inputValue === ''" @click="createTask">Create New Task</button>
+        <div v-for="task in tasks" :key="task.id">
+            <input v-model="task.name">
+            <button @click="editTask(task)">Modify</button>
+            <button @click="deleteTask(task)">Delete</button>
+        </div>
+    </div>
+</body>
+</html>
