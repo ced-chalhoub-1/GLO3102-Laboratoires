@@ -36,7 +36,6 @@ resetSearch = function(){
     }
 
 }
-
 toggleList = function(){
     var ul = document.querySelector("ul");
 
@@ -54,7 +53,7 @@ changeTextboxValue = function(element) {
     search_box.value = element.innerText;
 }
 
-var span_list = document.querySelectorAll("span");
+    var span_list = document.querySelectorAll("span");
 for(var i = 0; i < span_list.length; i++){
     span_list[i].addEventListener("click", function(){
         changeTextboxValue(this)
