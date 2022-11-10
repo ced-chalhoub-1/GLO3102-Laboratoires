@@ -1,5 +1,5 @@
 <template>
-  <h1>{{data['city_name']}},{{data['state_code']}}, {{data['country_code']}}</h1>
+  <h1>{{data['city_name']}}, {{data['country_code']}}</h1>
 </template>
 
 <script>
