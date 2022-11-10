@@ -10,7 +10,7 @@ const getCurrentWeather = async (lat, long) => {
 }
 
 const getWeatherForecast = async (location) => {
-    const url = `${baseUrl}/forecast/daily?lat=${location.latitude}&lon=${location.longitude}&key=${apiKey}&days=5`;
+    const url = `${baseUrl}/forecast/daily?lat=${location.latitude}&lon=${location.longitude}&key=${apiKey}&days=6`;
     const response = await fetch(url, {
         method: "GET",
     });
