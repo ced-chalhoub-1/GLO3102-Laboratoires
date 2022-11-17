@@ -7,10 +7,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get("/tasks", taskService.getTasks);
-app.post("/tasks", taskService.createTask);
-app.put("/tasks/:id", taskService.editTask)
-app.delete("/tasks/:id", taskService.deleteTask);
+app.post("/users", taskService.createUser);
+
+app.get("/:userid/tasks", taskService.getTasks);
+app.post("/:userid/tasks", taskService.createTask);
+app.put("/:userid/tasks/:id", taskService.editTask)
+app.delete("/:userid/tasks/:id", taskService.deleteTask);
 
 app.listen(8100);
 
